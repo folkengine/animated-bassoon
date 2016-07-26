@@ -12,7 +12,7 @@ prop_roman_add() ->
 	?SETUP(fun () -> eqc_c:start(roman),
                      fun() -> ok end
            end,	
-	?FORALL({X, Y}, {positive(), positive()},
+	?FORALL({X, Y}, {nat(), nat()},
 					begin
 						RomanX = decimal_to_roman(X),
 						RomanY = decimal_to_roman(Y),
