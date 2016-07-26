@@ -30,7 +30,7 @@ const char *sieve[] = {"M","CM","D", "CD", "C", "XC", "L", "XL", "X", "IX", "V",
 
 // Methods
 
-static int get_char_arabic_value(char roman_numeral)
+int get_char_arabic_value(char roman_numeral)
 {
     roman_numeral = toupper(roman_numeral);
     roman_numeral = roman_numeral - 'A';
@@ -40,7 +40,7 @@ static int get_char_arabic_value(char roman_numeral)
     return ROMAN_VALUES[(unsigned char) roman_numeral];
 }
 
-static int get_arabic_value(char *roman_numerals)
+int get_arabic_value(char *roman_numerals)
 {
     int sum = 0;
     size_t len = strlen(roman_numerals);
@@ -59,7 +59,7 @@ static int get_arabic_value(char *roman_numerals)
     return sum;
 }
 
-static char * get_roman_value(int arabic)
+char * get_roman_value(int arabic)
 {
     if (arabic < 1)
         return "";
