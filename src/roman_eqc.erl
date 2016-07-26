@@ -25,7 +25,7 @@ prop_roman_add() ->
 							%eqc_c:read_string(roman:add_roman("X", "X")), "XX")
 						
 						%
-							eqc_c:read_string(roman:add_roman(eqc_c:create_string(RomanX), eqc_c:create_string(RomanY))),
+							eqc_c:read_string(roman:add_roman(RomanX, RomanY)),
 							RomanXY)
 					end)).
 
