@@ -17,9 +17,13 @@ prop_roman_add() ->
            end,	
 	?FORALL({X, Y}, {positive(), positive()},
 					begin
+						RomanX = roman(X),
+						RomanY = roman(Y),
+						RomanXY = roman(X + Y),
+
 						equals(
-							roman:add_roman(roman(X), roman(y)),
-							roman(X + Y))
+							roman:add_roman(RomanX, RomanY),
+							RomanXY)
 					end)).
 
 
