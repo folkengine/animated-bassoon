@@ -2,14 +2,11 @@
 -include_lib("eqc/include/eqc.hrl").
 -compile([export_all]).
 
-
-
 positive() ->
 	?LET(N, nat(), N + 1).
 
 roman(N) ->
 	?LET(R, N, decimal_to_roman(R)). 
-
 
 prop_roman_add() ->
 	?SETUP(fun () -> eqc_c:start(roman),
@@ -22,10 +19,7 @@ prop_roman_add() ->
 						RomanXY = decimal_to_roman(X + Y),
 
 						equals(
-							%eqc_c:read_string(roman:add_roman("X", "X")), "XX")
-						
-						%
-							eqc_c:read_string(roman:add_roman(RomanX, RomanY)),
+							eqc_c:read_string(roman:add_roman(roman(X), roman(Y))),
 							RomanXY)
 					end)).
 
