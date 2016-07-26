@@ -23,7 +23,8 @@ prop_roman_add() ->
 
 						equals(
 							roman:add_roman("X", "X"), "XX")
-							
+						
+						%
 							%eqc_c:deref(roman:add_roman(eqc_c:create_string(RomanX), eqc_c:create_string(RomanY))),
 							%RomanXY)
 					end)).
