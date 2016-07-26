@@ -19,7 +19,7 @@ prop_roman_add() ->
 						RomanXY = decimal_to_roman(X + Y),
 
 						equals(
-							eqc_c:read_string(roman:add_roman(roman(X), roman(Y))),
+							eqc_c:read_string(roman:add_roman(RomanX, RomanY)),
 							RomanXY)
 					end)).
 
