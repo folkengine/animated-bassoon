@@ -12,6 +12,9 @@ roman(N) ->
 
 
 prop_roman_add() ->
+	?SETUP(fun () -> eqc_c:start(roman),
+                     fun() -> ok end
+           end,	
 	?FORALL({X, Y}, {positive(), positive()},
 					equals(
 						roman:add_roman(roman(X), roman(y)),
