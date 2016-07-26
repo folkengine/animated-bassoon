@@ -22,7 +22,7 @@ prop_roman_add() ->
 						RomanXY = decimal_to_roman(X + Y),
 
 						equals(
-							roman:add_roman(RomanX, RomanY),
+							eqc_c:deref(roman:add_roman(RomanX, RomanY)),
 							RomanXY)
 					end)).
 
