@@ -16,10 +16,11 @@ prop_roman_add() ->
                      fun() -> ok end
            end,	
 	?FORALL({X, Y}, {positive(), positive()},
-					equals(
-						roman:add_roman(roman(X), roman(y)),
-						roman(X + Y))).
-
+					begin
+						equals(
+							roman:add_roman(roman(X), roman(y)),
+							roman(X + Y))
+					end)).
 
 
 % eqc_gen:sample(eqc_gen:choose(1,5000)).
