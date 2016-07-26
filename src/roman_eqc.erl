@@ -17,15 +17,13 @@ prop_roman_add() ->
            end,	
 	?FORALL({X, Y}, {positive(), positive()},
 					begin
-						RomanX = string:strip(roman(X)),
-						RomanY = string:strip(roman(Y)),
-						RomanXY = roman(X + Y),
+						RomanX = decimal_to_roman(X),
+						RomanY = decimal_to_roman(Y),
+						RomanXY = decimal_to_roman(X + Y),
 
 						equals(
-							roman:add_roman("I", "I"), "II")
-							
-							% roman:add_roman(RomanX, RomanY),
-							% RomanXY)
+							roman:add_roman(RomanX, RomanY),
+							RomanXY)
 					end)).
 
 
