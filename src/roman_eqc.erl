@@ -17,8 +17,8 @@ prop_roman_add() ->
            end,	
 	?FORALL({X, Y}, {positive(), positive()},
 					begin
-						RomanX = roman(X),
-						RomanY = roman(Y),
+						RomanX = string:strip(roman(X)),
+						RomanY = string:strip(roman(Y)),
 						RomanXY = roman(X + Y),
 
 						equals(
